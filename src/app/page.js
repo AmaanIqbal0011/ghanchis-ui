@@ -5,6 +5,7 @@ import LandingPage from "../components/myComponent/landingPage";
 import Navbar from "@/components/myComponent/navbar";
 import Marquee from "@/components/myComponent/marquee"
 import HeroSection from "@/components/myComponent/heroSection";
+import Footer from "@/components/myComponent/footer";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <Marquee />
       <Navbar />
       <HeroSection />
+      <Footer />
      
 
     </div>
