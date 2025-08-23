@@ -8,7 +8,8 @@ import GhanchisLogo from "./logo";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-900 text-white py-12">
+    <footer className="w-full text-white py-12"
+    style={{backgroundColor : "#354F52"}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
