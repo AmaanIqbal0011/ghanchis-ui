@@ -15,6 +15,7 @@ import {
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import GhanchisLogo from "./logo";
 
+
 const Navbar = () => {
   return (
     <ClerkProvider>
@@ -30,8 +31,8 @@ const Navbar = () => {
     <Link href="/" className="hover:font-bold transition-all duration-200">
       Home
     </Link>
-    <Link href="/blog" className="hover:font-bold transition-all duration-200">
-      Blog
+    <Link href="/collection" className="hover:font-bold transition-all duration-200">
+      Our Collection
     </Link>
     <Link href="/about" className="hover:font-bold transition-all duration-200">
       About
@@ -84,7 +85,7 @@ const Navbar = () => {
           <SheetDescription>
             <div className="flex flex-col gap-6">
               <Link href="/">Home</Link>
-              <Link href="/blog">Blog</Link>
+              <Link href="/collection">Our Collection</Link>
               <Link href="/about">About</Link>
               <Link href="/contact-us">Contact-Us</Link>
               <div>

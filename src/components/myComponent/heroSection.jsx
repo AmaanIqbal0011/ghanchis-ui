@@ -3,12 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const images = [
-  "/landingimage.jpg", 
-  "/hero.jpg",
-  "/hero1.jpg",
-];
+const images = ["/landingimage.jpg", "/hero.jpg", "/hero1.jpg"];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,9 +15,7 @@ const HeroSection = () => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prev) =>
-          prev === images.length - 1 ? 0 : prev + 1
-        );
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
         setIsTransitioning(false);
       }, 500);
     }, 5000);
@@ -40,9 +35,7 @@ const HeroSection = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentIndex((prev) =>
-        prev === 0 ? images.length - 1 : prev - 1
-      );
+      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
       setIsTransitioning(false);
     }, 500);
   };
@@ -51,9 +44,7 @@ const HeroSection = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
-      );
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
       setIsTransitioning(false);
     }, 500);
   };
@@ -65,7 +56,9 @@ const HeroSection = () => {
         <div
           key={index}
           className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-            index === currentIndex ? "opacity-100 z-20 scale-100" : "opacity-0 z-10 scale-105"
+            index === currentIndex
+              ? "opacity-100 z-20 scale-100"
+              : "opacity-0 z-10 scale-105"
           }`}
         >
           <Image
@@ -81,17 +74,27 @@ const HeroSection = () => {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40 z-25"></div>
-      
+
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-4">
         <div className="max-w-4xl mx-auto transform transition-all duration-700 ease-in-out animate-fade-up">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight 
-                         bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
+          <motion.h1
+          initial={{opacity : 0 ,y: -100}}
+          animate={{opacity : 1,y:0}}
+          transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay : 0.4
+          }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 md:mb-6 leading-tight text-white"
+                         
+          >
             HAPPINESS FOR FAMILIES
-          </h1>
+          </motion.h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <Link href="/gallery">
-              <Button 
+              <Button
                 className="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold rounded-full 
                            shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-yellow-500/50"
               >
@@ -109,8 +112,8 @@ const HeroSection = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-3 w-3 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? "bg-amber-500 scale-125" 
+              index === currentIndex
+                ? "bg-amber-500 scale-125"
                 : "bg-white/70 hover:bg-white"
             }`}
             aria-label={`Go to slide ${index + 1}`}
@@ -124,8 +127,19 @@ const HeroSection = () => {
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full z-30 transition-all duration-300 backdrop-blur-sm hidden sm:block"
         aria-label="Previous slide"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 md:h-8 md:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
       <button
@@ -133,29 +147,62 @@ const HeroSection = () => {
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full z-30 transition-all duration-300 backdrop-blur-sm hidden sm:block"
         aria-label="Next slide"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 md:h-8 md:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
 
       {/* Mobile Arrows (Now Clickable) */}
       <div className="sm:hidden absolute bottom-20 left-0 right-0 flex justify-between items-center px-6 z-30">
-        <button 
+        <button
           onClick={goToPrev}
           className="bg-black/30 rounded-full p-2 backdrop-blur-sm"
           aria-label="Previous slide"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
-        <button 
+        <button
           onClick={goToNext}
           className="bg-black/30 rounded-full p-2 backdrop-blur-sm"
           aria-label="Next slide"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>
