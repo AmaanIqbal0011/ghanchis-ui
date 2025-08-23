@@ -81,7 +81,7 @@ className="object-cover object-top"
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40 z-25"></div>
       
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-4">
+      {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-4">
         <div className="max-w-4xl mx-auto transform transition-all duration-700 ease-in-out">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
             Welcome to <span className="text-amber-400">Ghanchis.pk</span>
@@ -98,7 +98,7 @@ className="object-cover object-top"
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Dots Indicator */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center gap-3 z-30">
