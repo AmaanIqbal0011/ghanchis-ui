@@ -10,7 +10,7 @@ export default function ContactUs() {
     <>
       <Navbar />
 
-      <main className="min-h-screen w-full bg-white dark:bg-black text-black dark:text-white flex flex-col items-center">
+      <main className="min-h-screen w-full flex flex-col items-center">
         {/* Header */}
         <section
           className="w-full text-center py-16 bg-cover bg-center bg-no-repeat relative"
@@ -54,7 +54,7 @@ export default function ContactUs() {
         <section 
   className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 
              grid grid-cols-1 lg:grid-cols-2 gap-12 
-             border border-gray-300 dark:border-gray-700 rounded-2xl mt-10 mb-8"
+             border border-gray-500 dark:border-gray-500 rounded-2xl mt-10 mb-8"
 >
   {/* Left Section: Contact Details */}
   <div className="space-y-8">
@@ -63,8 +63,7 @@ export default function ContactUs() {
         Get in Touch
       </h2>
       <p className="text-gray-600 dark:text-gray-400 text-base max-w-xl mx-auto lg:mx-0">
-        Whether you need support, have a custom request, or just want to
-        say hello, we&apos;re always ready to listen.
+        For any query or any question or suggestions please contact us on following details or fill the following form our team will contact you as soon as possible.
       </p>
     </div>
 
@@ -108,43 +107,43 @@ export default function ContactUs() {
   </div>
 
   {/* Right Section: Contact Form */}
-  <div className="p-8 rounded-2xl shadow-md" style={{ backgroundColor: "#EDEDE9" }}>
-    <h2 className="text-2xl font-semibold mb-6 dark:text-black">
+<div className="p-8 rounded-2xl shadow-xl dark:bg-[#262626] bg-[#E4E4E7]">
+    <h2 className="text-2xl font-semibold mb-6">
       Send Us a Message
     </h2>
     <form className="space-y-6">
       <div>
-        <label className="block mb-2 text-sm dark:text-black font-medium">
+        <label className="block mb-2 text-sm font-medium">
           Full Name
         </label>
         <input
           type="text"
           placeholder="Enter your name"
-          className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:text-black focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           required
         />
       </div>
 
       <div>
-        <label className="block mb-2 dark:text-black text-sm font-medium">
+        <label className="block mb-2  text-sm font-medium">
           Email Address
         </label>
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full p-3 rounded-lg border dark:text-black border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           required
         />
       </div>
 
       <div>
-        <label className="block mb-2 dark:text-black text-sm font-medium">
+        <label className="block mb-2 k text-sm font-medium">
           Message
         </label>
         <textarea
           rows={4}
           placeholder="Write your message..."
-          className="w-full p-3 rounded-lg border dark:text-black border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           required
         ></textarea>
       </div>
