@@ -29,6 +29,7 @@ export default function AboutUs() {
   const sustainabilityRef = useRef(null)
   const teamRef = useRef(null)
   const testimonialsRef = useRef(null)
+  const aimsRef = useRef(null) 
   
   // Check if elements are in view
   const storyInView = useInView(storyRef, { once: true, amount: 0.3 })
@@ -230,7 +231,7 @@ export default function AboutUs() {
           </motion.div>
         </div>
       </section>
-       <section ref={valuesRef} className="bg-white dark:bg-zinc-950 py-20 md:py-28 px-4">
+<section ref={aimsRef} className="bg-white dark:bg-zinc-950 py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
